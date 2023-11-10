@@ -21,6 +21,16 @@ public class ScoreLivesPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (DestroyOutOfBounds.isDestroyOutOfBounds)
+        {
+            --currentHealth;
+            healthbar.SetHealth(currentHealth);
+            DestroyOutOfBounds.isDestroyOutOfBounds = false;
+        }
+        if (currentHealth == 0)
+        {
+            FindObjectOfType<LoadGame>().LoadScene();
+        }
     }
     
     private void OnTriggerEnter(Collider other)
@@ -28,13 +38,8 @@ public class ScoreLivesPlayer : MonoBehaviour
         if (gameObject.tag == "Player" && other.tag == "Animal")
         {
             currentHealth -= 1;
-            if (currentHealth == 0)
-            {
-                FindObjectOfType<LoadGame>().LoadScene();
-            }
             healthbar.SetHealth(currentHealth);
         }
-        
     }
     
 }

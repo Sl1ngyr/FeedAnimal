@@ -29,6 +29,10 @@ public class DetectCollision : MonoBehaviour
             }
             Destroy(other.gameObject);
         }
+        else if(other.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
     }
 
     IEnumerator WaitForDie()

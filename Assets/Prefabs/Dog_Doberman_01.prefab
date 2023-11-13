@@ -3150,11 +3150,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4262519016989402751}
   - component: {fileID: 3084913028113521055}
-  - component: {fileID: 8402944698108326556}
-  - component: {fileID: 7229078088776475688}
   - component: {fileID: 7750519402767862465}
   - component: {fileID: 4976356720567033887}
-  - component: {fileID: 89074357513119215}
+  - component: {fileID: 8413242383276138731}
+  - component: {fileID: 4160529707174411259}
   m_Layer: 0
   m_Name: Dog_Doberman_01
   m_TagString: Animal
@@ -3236,31 +3235,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8402944698108326556
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231151347050470511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8400910720f4a4d8fabc8496a42723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 7
---- !u!114 &7229078088776475688
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4231151347050470511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32054b6d021fed64eaa966c921e63293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &7750519402767862465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3309,7 +3283,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &89074357513119215
+--- !u!114 &8413242383276138731
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3318,10 +3292,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 4231151347050470511}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb19e2ec4a02e2d43a690b4858165875, type: 3}
+  m_Script: {fileID: 11500000, guid: ed71e04aab694074d94c485738f460e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gateType: 2
+--- !u!114 &4160529707174411259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4231151347050470511}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078b6b0b2f7d70647b29a98b89a60a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 2
   healthbar: {fileID: 3794507893773117298}
+  speed: 6
 --- !u!1 &4284628429991292646
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,12 +8,13 @@ public class DestroyOutOfBounds : MonoBehaviour
     public static bool isDestroyOutOfBounds = false;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Wall")
+        if (other.gameObject.CompareTag("Wall") && gameObject.CompareTag("Animal"))
         {
+            Debug.Log("MUUUUU");
             isDestroyOutOfBounds = true;
             Destroy(gameObject);
         }
-        else if (other.tag == "Wall" && gameObject.tag == "Food")
+        else if(other.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
         }

@@ -2259,11 +2259,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2831490696184580700}
   - component: {fileID: 2076190923736885080}
-  - component: {fileID: 7188748065216529225}
-  - component: {fileID: 707830726920867026}
   - component: {fileID: 1454423451271478175}
   - component: {fileID: 7691548468925159218}
-  - component: {fileID: 7445778225287288269}
+  - component: {fileID: -3190106147223005624}
+  - component: {fileID: -1825937841983683248}
   m_Layer: 0
   m_Name: Animal_Cow_White
   m_TagString: Animal
@@ -2313,31 +2312,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7188748065216529225
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8779176604185162022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8400910720f4a4d8fabc8496a42723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 4
---- !u!114 &707830726920867026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8779176604185162022}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32054b6d021fed64eaa966c921e63293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1454423451271478175
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2386,7 +2360,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &7445778225287288269
+--- !u!114 &-3190106147223005624
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2395,10 +2369,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 8779176604185162022}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb19e2ec4a02e2d43a690b4858165875, type: 3}
+  m_Script: {fileID: 11500000, guid: ed71e04aab694074d94c485738f460e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gateType: 2
+--- !u!114 &-1825937841983683248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8779176604185162022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 078b6b0b2f7d70647b29a98b89a60a32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 4
   healthbar: {fileID: 7352663712462433758}
+  speed: 3
 --- !u!1 &8789230308872631188
 GameObject:
   m_ObjectHideFlags: 0

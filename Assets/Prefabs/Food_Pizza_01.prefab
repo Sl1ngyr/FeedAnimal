@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4155390336254755965}
   - component: {fileID: 7146459999617851757}
   - component: {fileID: 6975311467021944090}
-  - component: {fileID: 339386742159687235}
-  - component: {fileID: 5943302904637346219}
   - component: {fileID: 6129863472791927549}
+  - component: {fileID: -7335635653572106927}
   m_Layer: 0
   m_Name: Food_Pizza_01
   m_TagString: Food
@@ -30,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 8611282530578285797}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 5}
+  m_LocalPosition: {x: 0, y: 0.13, z: 5}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -86,31 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &339386742159687235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611282530578285797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d8400910720f4a4d8fabc8496a42723, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 40
---- !u!114 &5943302904637346219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8611282530578285797}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32054b6d021fed64eaa966c921e63293, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &6129863472791927549
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -132,3 +106,16 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.4597009, y: 0.13234863, z: 0.55363166}
   m_Center: {x: 0, y: 0, z: -0.0000001937151}
+--- !u!114 &-7335635653572106927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8611282530578285797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed71e04aab694074d94c485738f460e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gateType: 1

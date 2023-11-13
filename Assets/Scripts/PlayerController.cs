@@ -13,13 +13,13 @@ public class PlayerController : MonoBehaviour
     private float xRange = 15.0f;
     [SerializeField] private float zRange = 5f;
     
-    [SerializeField] private GameObject projectilePrefab;
-    
-    
+    public Food foodPrefab;
+
+    private FoodSpawner _foodSpawner;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _foodSpawner = GetComponent<FoodSpawner>();
     }
 
     // Update is called once per frame
@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
+            _foodSpawner._foodPool.Get();
         }
     }
     

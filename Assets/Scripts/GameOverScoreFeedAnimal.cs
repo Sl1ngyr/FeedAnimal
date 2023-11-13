@@ -13,6 +13,6 @@ public class GameOverScoreFeedAnimal : MonoBehaviour
 
     void SetScoreText()
     {
-        text.text = $"Your Score: {DetectCollision.count.ToString()}";
+        text.text = $"Your Score: {Animal.count.ToString()}";
     }
 }

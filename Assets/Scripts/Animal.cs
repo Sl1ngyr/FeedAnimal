@@ -7,8 +7,8 @@ using UnityEngine.Pool;
 
 public class Animal : MonoBehaviour
 {
-    //public static int count = 0;
-    //public static bool isDestroyOutOfBounds = false;
+    public static int count = 0;
+    public static bool isDestroyOutOfBounds = false;
     
     [SerializeField] private int maxHealth;
     private int currentHealth = 0;
@@ -43,7 +43,6 @@ public class Animal : MonoBehaviour
                     {
                         StartCoroutine("WaitForDeactivateAnimalAfterTime");
                     }
-                    Destroy(collider.gameObject);
                     break;
                 case GateType.Player:
                     _pool.Release(this);
@@ -51,7 +50,7 @@ public class Animal : MonoBehaviour
                     healthbar.SetHealth(currentHealth);
                     break;
                 case GateType.Wall:
-                    //isDestroyOutOfBounds = true;
+                    isDestroyOutOfBounds = true;
                     _pool.Release(this);
                     currentHealth = 0;
                     healthbar.SetHealth(currentHealth);
@@ -67,7 +66,7 @@ public class Animal : MonoBehaviour
         currentHealth = 0;
         healthbar.SetHealth(currentHealth);
         StopCoroutine("WaitForDeactivateAnimalAfterTime");
-        //count++;
+        count++;
     }
 
     public void SetPool(ObjectPool<Animal> pool)

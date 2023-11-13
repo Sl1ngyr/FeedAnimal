@@ -19,7 +19,7 @@ public class ObjectPoolAnimal : MonoBehaviour
     void Start()
     {
         spawnManager = GetComponent<SpawnManager>();
-        _pool = new ObjectPool<Animal>(CreateAnimal, OnTakeAnimalFromPool, OnReturnAnimalToPool, OnDestroyAnimal, true,
+        _pool = new ObjectPool<Animal>(CreateAnimal, OnTakeAnimalFromPool, OnReturnAnimalToPool, OnDestroyAnimal, false,
             10, 30);
     }
 
@@ -36,7 +36,7 @@ public class ObjectPoolAnimal : MonoBehaviour
     private void OnTakeAnimalFromPool(Animal animal)
     {
         //Створення нової позиції об'єкта 
-        SetAnimalRandomPos(ref animal);
+        SetRandomAnimalPos(ref animal);
         
         //Активовуємо об'єкт
         animal.gameObject.SetActive(true);
@@ -72,7 +72,7 @@ public class ObjectPoolAnimal : MonoBehaviour
         }
     }
 
-    private void SetAnimalRandomPos(ref Animal animal)
+    private void SetRandomAnimalPos(ref Animal animal)
     {
         randomSide = (RandomSpawnSideAnimal)Random.Range(0, System.Enum.GetValues(typeof(RandomSpawnSideAnimal)).Length); // рандомне значення з якого ми присвоїм позицію об'єкту
         spawnManager.SetAnimalPos();

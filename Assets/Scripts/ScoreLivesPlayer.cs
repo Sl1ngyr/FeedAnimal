@@ -21,11 +21,11 @@ public class ScoreLivesPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DestroyOutOfBounds.isDestroyOutOfBounds)
+        if (Animal.isDestroyOutOfBounds)
         {
             --currentHealth;
             healthbar.SetHealth(currentHealth);
-            DestroyOutOfBounds.isDestroyOutOfBounds = false;
+            Animal.isDestroyOutOfBounds = false;
         }
         if (currentHealth == 0)
         {

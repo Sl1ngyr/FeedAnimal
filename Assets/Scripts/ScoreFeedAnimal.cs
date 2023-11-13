@@ -10,17 +10,17 @@ public class ScoreFeedAnimal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textScore.SetStartText($"Score: {DetectCollision.count.ToString()}");
-        score = DetectCollision.count;
+        textScore.SetStartText($"Score: {Animal.count.ToString()}");
+        score = Animal.count;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (DetectCollision.count > score)
+        if (Animal.count > score)
         {
-            textScore.setScoreText($"Score: {DetectCollision.count.ToString()}");
-            score = DetectCollision.count;
+            textScore.setScoreText($"Score: {Animal.count.ToString()}");
+            score = Animal.count;
         }
     }
 }

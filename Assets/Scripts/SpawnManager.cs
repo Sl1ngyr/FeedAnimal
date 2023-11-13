@@ -41,11 +41,6 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomAnimal()
     {
-        //Instantiate(animalPrefabs[animalIndex], spawnPosTop, animalPrefabs[animalIndex].transform.rotation);
-        //animalIndex = Random.Range(0, animalPrefabs.Length);
-        //Instantiate(animalPrefabs[animalIndex], spawnPosLeft, rotationLeftSide);
-        //animalIndex = Random.Range(0, animalPrefabs.Length);
-        //Instantiate(animalPrefabs[animalIndex], spawnPosRight, rotationRightSide);
         objectPoolAnimal._pool.Get();
         objectPoolAnimal._pool.Get();
         objectPoolAnimal._pool.Get();

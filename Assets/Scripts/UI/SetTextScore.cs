@@ -13,7 +13,7 @@ public class SetTextScore : MonoBehaviour
         text.text = textStart;
     }
 
-    public void setScoreText(string textScore)
+    public void SetScoreText(string textScore)
     {
         text.text = textScore;
     }

@@ -19,7 +19,7 @@ public class ScoreFeedAnimal : MonoBehaviour
     {
         if (Animal.count > score)
         {
-            textScore.setScoreText($"Score: {Animal.count.ToString()}");
+            textScore.SetScoreText($"Score: {Animal.count.ToString()}");
             score = Animal.count;
         }
     }

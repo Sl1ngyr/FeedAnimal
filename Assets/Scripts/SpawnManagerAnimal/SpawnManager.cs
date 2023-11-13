@@ -21,7 +21,7 @@ public class SpawnManager : MonoBehaviour
     
     // Interval to spawn Animal
     private float startDelay = 1.5f;
-    private float spawnInterval = 3.5f;
+    private float spawnInterval = 4f;
     
     public Vector3 SpawnPosTop => spawnPosTop;
     public Vector3 SpawnPosLeft => spawnPosLeft;

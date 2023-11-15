@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GateType
+public enum GateType // теги для визначення об'єкта
 {
     Player,
     Food,
     Animal,
-    Wall
+    Wall,
+    FastAnimal
 }
 
 public class GateDescription : MonoBehaviour

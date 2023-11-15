@@ -32,7 +32,7 @@ public class Animal : MonoBehaviour
     {
         GateDescription nameTriggerCollider = collider.GetComponent<GateDescription>();
 
-        if (nameTriggerCollider != null)
+        if (nameTriggerCollider != null && nameTriggerCollider.gateType != GateType.FastAnimal)
         {
             switch (nameTriggerCollider.gateType)
             {

@@ -10,17 +10,17 @@ public class ScoreFeedAnimal : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        textScore.SetStartText($"Score: {Animal.count.ToString()}");
-        score = Animal.count;
+        textScore.SetStartText($"Score: {Animal.scorePlayerFeedAnimal.ToString()}");
+        score = Animal.scorePlayerFeedAnimal;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Animal.count > score)
+        if (Animal.scorePlayerFeedAnimal > score)
         {
-            textScore.SetScoreText($"Score: {Animal.count.ToString()}");
-            score = Animal.count;
+            textScore.SetScoreText($"Score: {Animal.scorePlayerFeedAnimal.ToString()}");
+            score = Animal.scorePlayerFeedAnimal;
         }
     }
 }

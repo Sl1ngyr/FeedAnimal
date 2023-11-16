@@ -1,13 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
+using SpawnManagerAnimal;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SpawnManager : MonoBehaviour
 {
     
     [SerializeField] public Animal[] animalPrefabs;
-    [SerializeField] private Animal speedAnimalPrefabSpeed;
+    
+    [SerializeField] private Animals speedAnimalPrefabSpeed;
     [SerializeField] private SpawnManager _spawnManager;
     [SerializeField] private SpawnPosAnimal spawnPosAnimal;
     private ObjectPoolAnimal objectPoolAnimal;
@@ -17,7 +16,6 @@ public class SpawnManager : MonoBehaviour
     private float spawnInterval = 4;
 
     // Interval to spawn Fast Animal
-
     private float startDelayFastAnimal = 5;
     private float spawnIntervalFastAnimal = 20;
     
@@ -26,7 +24,7 @@ public class SpawnManager : MonoBehaviour
     {
         objectPoolAnimal = GetComponent<ObjectPoolAnimal>();
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
-        //InvokeRepeating("SpawnFastAnimal", startDelay,spawnIntervalFastAnimal);
+        InvokeRepeating("SpawnFastAnimal", startDelay,spawnIntervalFastAnimal);
     }
 
     void SpawnRandomAnimal()
@@ -39,8 +37,8 @@ public class SpawnManager : MonoBehaviour
     private void SpawnFastAnimal()
     {
         spawnPosAnimal.SetAnimalPos(ref speedAnimalPrefabSpeed, ref _spawnManager);
-        //Instantiate(speedAnimalPrefabSpeed, speedAnimalPrefabSpeed.transform.position,
-            //speedAnimalPrefabSpeed.transform.rotation);
+        Instantiate(speedAnimalPrefabSpeed, speedAnimalPrefabSpeed.transform.position,
+            speedAnimalPrefabSpeed.transform.rotation);
     }
     
 }

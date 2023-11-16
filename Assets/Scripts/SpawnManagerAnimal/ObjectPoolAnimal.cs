@@ -1,8 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
+using SpawnManagerAnimal;
 using UnityEngine;
 using UnityEngine.Pool;
-using UnityEngine.Serialization;
 
 public class ObjectPoolAnimal : MonoBehaviour
 {
@@ -15,7 +13,7 @@ public class ObjectPoolAnimal : MonoBehaviour
     {
         spawnManager = GetComponent<SpawnManager>();
         _pool = new ObjectPool<Animal>(CreateAnimal, OnTakeAnimalFromPool, OnReturnAnimalToPool, OnDestroyAnimal, false,
-            10, 30);
+            12, 30);
     }
 
     //Створення об'єкта
@@ -28,7 +26,7 @@ public class ObjectPoolAnimal : MonoBehaviour
     }
 
     // Коли ми витягаємо об'єкт з пула
-    private void OnTakeAnimalFromPool(Animal animal)
+    private void OnTakeAnimalFromPool(Animals animal)
     {
         //Створення нової позиції об'єкта 
         spawnPosAnimal.SetAnimalPos(ref animal,ref spawnManager);

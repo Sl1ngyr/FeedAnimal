@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     private float horizontalInput;
 
     [SerializeField] private float speed = 20.0f;
-    private float xRange = 15.0f;
+    private float xRange = 15.0f;   
     
     private FoodSpawner _foodSpawner;
     public Food foodPrefab;

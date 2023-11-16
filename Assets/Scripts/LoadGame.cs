@@ -12,7 +12,7 @@ public class LoadGame : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 2)
         {
-            Animal.count = 0;
+            Animal.scorePlayerFeedAnimal = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
         }
         else

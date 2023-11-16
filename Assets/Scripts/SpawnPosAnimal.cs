@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SpawnManagerAnimal;
 using UnityEngine;
 
 public class SpawnPosAnimal : MonoBehaviour
@@ -38,7 +39,7 @@ public class SpawnPosAnimal : MonoBehaviour
     }
     
     //Створення рандоної позиції об'єкта
-    public void SetAnimalPos(ref Animal animal,ref SpawnManager spawnManager)
+    public void SetAnimalPos(ref Animals animal,ref SpawnManager spawnManager)
     {
         if (countPosAnimal >= 3)
         {

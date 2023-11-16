@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
+using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
@@ -12,7 +10,7 @@ public class PlayerController : MonoBehaviour
     private float xRange = 15.0f;   
     
     private FoodSpawner _foodSpawner;
-    public Food foodPrefab;
+    [SerializeField] private Food foodPrefab;
 
     
     void Start()
@@ -40,6 +38,16 @@ public class PlayerController : MonoBehaviour
         {
             _foodSpawner._foodPool.Get();
         }
+    }
+
+    public Food GetFoodPrefab()
+    {
+        return foodPrefab;
+    }
+
+    public Quaternion GetFoodPrefabRotation()
+    {
+        return foodPrefab.transform.rotation;
     }
     
 }

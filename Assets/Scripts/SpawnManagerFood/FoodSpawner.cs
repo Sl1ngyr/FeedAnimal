@@ -1,6 +1,3 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Pool;
  
@@ -19,8 +16,8 @@ public class FoodSpawner : MonoBehaviour
 
     private Food CreateFood()
     {
-        Food food = Instantiate(playerController.foodPrefab, playerController.gameObject.transform.position,
-            playerController.foodPrefab.transform.rotation);
+        Food food = Instantiate(playerController.GetFoodPrefab(), playerController.gameObject.transform.position,
+            playerController.GetFoodPrefabRotation());
         food.SetPool(_foodPool);
         return food;
     }

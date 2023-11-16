@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using SpawnManagerAnimal;
 using UnityEngine;
 
@@ -14,7 +12,8 @@ public class SpawnPosAnimal : MonoBehaviour
     private float spawnPosTopZ = 20;
     private float spawnPosSideX = 20;
     private float rotationSide = 90;
-    
+
+    private Quaternion basicRotationAnimal = new Quaternion(0, 180, 0, 0);
     private Vector3 spawnPosTop;
     private Vector3 spawnPosLeft;
     private Vector3 spawnPosRight;
@@ -29,12 +28,12 @@ public class SpawnPosAnimal : MonoBehaviour
     
     public void CreateAnimalSpawn(ref Animal animal, ref SpawnManager spawnManager)
     {
-        if (countOfAnimal > spawnManager.animalPrefabs.Length)
+        if (countOfAnimal > spawnManager.GetLengthAnimalPrefabs())
         {
             countOfAnimal = 0;
         }
-        animal = Instantiate(spawnManager.animalPrefabs[countOfAnimal], spawnManager.animalPrefabs[countOfAnimal].transform.position, 
-            spawnManager.animalPrefabs[countOfAnimal].transform.rotation);
+        animal = Instantiate(spawnManager.GetAnimalPrefab(countOfAnimal), spawnManager.GetTransformPosAnimalPrefab(countOfAnimal), 
+            basicRotationAnimal);
         countOfAnimal++;
     }
     
@@ -51,7 +50,7 @@ public class SpawnPosAnimal : MonoBehaviour
         {
             case 0:
                 animal.gameObject.transform.position = SpawnPosTop;
-                animal.gameObject.transform.rotation = spawnManager.animalPrefabs[0].transform.rotation;
+                animal.gameObject.transform.rotation = basicRotationAnimal;
                 countPosAnimal++;
                 break;
             case 1:

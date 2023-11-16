@@ -1407,7 +1407,7 @@ MonoBehaviour:
   - {fileID: 38075343130392499, guid: 0305b51ef7f92934582aac572a9fa0f2, type: 3}
   - {fileID: 7439520519954719613, guid: 47b92157ab8d4dd469025b84a8b46a7e, type: 3}
   - {fileID: 463626561808654668, guid: 0289b8e73dc33894b90304a584b8db1b, type: 3}
-  speedAnimalPrefabSpeed: {fileID: 7751714661710091944, guid: c385bc6bf39b66248be3df57c7ed42b6, type: 3}
+  speedAnimalPrefabSpeed: {fileID: -2605073116117650412, guid: c385bc6bf39b66248be3df57c7ed42b6, type: 3}
   _spawnManager: {fileID: 1040153808}
   spawnPosAnimal: {fileID: 299066470}
 --- !u!4 &1040153809

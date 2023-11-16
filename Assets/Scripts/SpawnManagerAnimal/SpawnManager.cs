@@ -4,8 +4,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     
-    [SerializeField] public Animal[] animalPrefabs;
-    
+    [SerializeField] private Animal[] animalPrefabs;
     [SerializeField] private Animals speedAnimalPrefabSpeed;
     [SerializeField] private SpawnManager _spawnManager;
     [SerializeField] private SpawnPosAnimal spawnPosAnimal;
@@ -39,6 +38,21 @@ public class SpawnManager : MonoBehaviour
         spawnPosAnimal.SetAnimalPos(ref speedAnimalPrefabSpeed, ref _spawnManager);
         Instantiate(speedAnimalPrefabSpeed, speedAnimalPrefabSpeed.transform.position,
             speedAnimalPrefabSpeed.transform.rotation);
+    }
+
+    public Animal GetAnimalPrefab(int i)
+    {
+        return animalPrefabs[i];
+    }
+
+    public Vector3 GetTransformPosAnimalPrefab(int i)
+    {
+        return animalPrefabs[i].transform.position;
+    }
+
+    public int GetLengthAnimalPrefabs()
+    {
+        return animalPrefabs.Length;
     }
     
 }

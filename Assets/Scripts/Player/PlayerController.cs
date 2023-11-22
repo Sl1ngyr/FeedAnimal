@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
     private FoodSpawner _foodSpawner;
     [SerializeField] private Food foodPrefab;
-
+    
     
     void Start()
     {
@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
+
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -32,8 +33,6 @@ public class PlayerController : MonoBehaviour
 
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-        
-        
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _foodSpawner._foodPool.Get();

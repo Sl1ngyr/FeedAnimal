@@ -12,10 +12,14 @@ namespace SpawnManagerAnimal
         [SerializeField] protected int maxHealth;
         [SerializeField] protected HealthBarAnimals healthbar;
         [SerializeField] protected float speed;
+        [SerializeField] protected AudioClip eatSound;
+        protected AudioSource animalSound;
+        
         private void Start()
         {
             healthbar.SetMaxHealth(maxHealth);
             healthbar.SetHealth(currentHealth);
+            animalSound = GetComponent<AudioSource>();
         }
         
         private void Update()

@@ -3,8 +3,14 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    
     [SerializeField] private Animal[] animalPrefabs;
+
+    public Animal[] AnimalPrefabs
+    {
+        get => animalPrefabs;
+        set => animalPrefabs = value;
+    }
+
     [SerializeField] private Animals speedAnimalPrefabSpeed;
     [SerializeField] private SpawnManager _spawnManager;
     [SerializeField] private SpawnPosAnimal spawnPosAnimal;

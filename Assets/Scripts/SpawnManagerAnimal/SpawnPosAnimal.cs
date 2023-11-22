@@ -28,7 +28,7 @@ public class SpawnPosAnimal : MonoBehaviour
     
     public void CreateAnimalSpawn(ref Animal animal, ref SpawnManager spawnManager)
     {
-        if (countOfAnimal > spawnManager.GetLengthAnimalPrefabs())
+        if (countOfAnimal >= spawnManager.GetLengthAnimalPrefabs())
         {
             countOfAnimal = 0;
         }

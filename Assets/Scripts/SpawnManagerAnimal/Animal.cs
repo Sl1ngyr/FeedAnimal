@@ -18,6 +18,7 @@ public class Animal : Animals
                 case GateType.Food:
                     currentHealth++;
                     healthbar.SetHealth(currentHealth);
+                    animalSound.PlayOneShot(eatSound, 1.0f);
                     if (currentHealth == maxHealth)
                     {
                         StartCoroutine("WaitForDeactivateAnimalAfterTime");

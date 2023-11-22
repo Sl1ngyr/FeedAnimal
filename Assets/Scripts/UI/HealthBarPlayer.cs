@@ -1,15 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine;
+using UI;
 
-public class HealthBarPlayer : MonoBehaviour
+public class HealthBarPlayer : HealthBar
 {
-    public Slider slider;
-    public Gradient gradient;
-    public Image fill;
-    public Text text;
-    public void SetMaxHealth(int maxHealth)
+    [SerializeField] private Text text;
+    public override void SetMaxHealth(int maxHealth)
     {
         slider.maxValue = maxHealth;
         slider.value = maxHealth;
@@ -18,7 +14,7 @@ public class HealthBarPlayer : MonoBehaviour
         text.text = $"Lives: {maxHealth.ToString()}";
     }
 
-    public void SetHealth(int health)
+    public override void SetHealth(int health)
     {
         slider.value = health;
         fill.color = gradient.Evaluate(slider.normalizedValue);

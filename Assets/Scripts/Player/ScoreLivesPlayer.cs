@@ -6,8 +6,6 @@ public class ScoreLivesPlayer : MonoBehaviour
     private int maxHealth = 3;
     private int currentHealth;
 
-    public int CurrentHealth => currentHealth;
-    
     private AudioSource playerSound;
 
     [SerializeField] private GameOverScreen gameOverScreen;

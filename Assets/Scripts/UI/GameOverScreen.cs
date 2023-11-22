@@ -10,7 +10,6 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
         Time.timeScale = 0f;
-        Debug.Log("Game Over");
         pointText.text = "Your score: " + score.ToString();
     }
 
@@ -18,13 +17,6 @@ public class GameOverScreen : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 1f;
-        Debug.Log("Game Restart");
         SceneManager.LoadScene("GameScene");
-    }
-    
-    public void MainMenuButton()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Start");
     }
 }

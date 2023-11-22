@@ -330,6 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 494544691}
   - component: {fileID: 494544692}
+  - component: {fileID: 494544693}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -368,6 +369,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf9db1561b16cc54ead9c646bc9e824f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &494544693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 494544690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b393049bc84f7396829fd6ca19810b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &669782352
@@ -822,9 +835,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 494544692}
-        m_TargetAssemblyTypeName: LoadGame, Assembly-CSharp
-        m_MethodName: QuitGame
+      - m_Target: {fileID: 494544693}
+        m_TargetAssemblyTypeName: UI.QuitGame, Assembly-CSharp
+        m_MethodName: Quit
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

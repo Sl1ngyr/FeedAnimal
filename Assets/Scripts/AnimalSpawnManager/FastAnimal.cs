@@ -1,7 +1,8 @@
 using SpawnManagerAnimal;
 using UnityEngine;
+using DefaultNamespace;
 
-public class FastAnimal : Animals
+public class FastAnimal : BaseAnimal
 {
     private void OnTriggerEnter(Collider collider)
     {
@@ -14,7 +15,7 @@ public class FastAnimal : Animals
                 case GateType.Food:
                     currentHealth++;
                     healthbar.SetHealth(currentHealth);
-                    animalSound.PlayOneShot(eatSound, 1.0f);
+                    ActionSoundManager.onAnimalSoundPlayed?.Invoke();
                     if (currentHealth == maxHealth)
                     {
                         StartCoroutine("WaitForDeactivateAnimalAfterTime");

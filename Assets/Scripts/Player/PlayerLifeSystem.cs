@@ -1,7 +1,7 @@
 using SpawnManagerAnimal;
 using UnityEngine;
 
-public class ScoreLivesPlayer : MonoBehaviour
+public class PlayerLifeSystem : MonoBehaviour
 {
     private int maxHealth = 3;
     private int currentHealth;
@@ -10,7 +10,7 @@ public class ScoreLivesPlayer : MonoBehaviour
 
     [SerializeField] private GameOverScreen gameOverScreen;
     [SerializeField] private AudioClip hitSound;
-    [SerializeField] private HealthBarPlayer healthbar;
+    [SerializeField] private PlayerHealthBar healthbar;
 
     private bool isGameOver = false;
     // Start is called before the first frame update
@@ -24,11 +24,11 @@ public class ScoreLivesPlayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Animals.isDestroyOutOfBounds)
+        if (BaseAnimal.isDestroyOutOfBounds)
         {
             --currentHealth;
             healthbar.SetHealth(currentHealth);
-            Animals.isDestroyOutOfBounds = false;
+            BaseAnimal.isDestroyOutOfBounds = false;
             if (currentHealth == 0)
             {
                 isGameOver = true;
@@ -37,7 +37,7 @@ public class ScoreLivesPlayer : MonoBehaviour
 
         if (isGameOver)
         {
-            gameOverScreen.Setup(Animals.scorePlayerFeedAnimal);
+            gameOverScreen.Setup(BaseAnimal.scorePlayerFeedAnimal);
             isGameOver = false;
         }
     }

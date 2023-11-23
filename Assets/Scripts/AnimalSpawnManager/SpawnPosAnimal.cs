@@ -26,19 +26,19 @@ public class SpawnPosAnimal : MonoBehaviour
     public Quaternion RotationLeftSide => rotationLeftSide;
     public Quaternion RotationRightSide => rotationRightSide;
     
-    public void CreateAnimalSpawn(ref Animal animal, ref SpawnManager spawnManager)
+    public void CreateAnimalSpawn(ref Animal animal, ref AnimalSpawnManager animalSpawnManager)
     {
-        if (countOfAnimal >= spawnManager.GetLengthAnimalPrefabs())
+        if (countOfAnimal >= animalSpawnManager.GetLengthAnimalPrefabs())
         {
             countOfAnimal = 0;
         }
-        animal = Instantiate(spawnManager.GetAnimalPrefab(countOfAnimal), spawnManager.GetTransformPosAnimalPrefab(countOfAnimal), 
+        animal = Instantiate(animalSpawnManager.GetAnimalPrefab(countOfAnimal), animalSpawnManager.GetTransformPosAnimalPrefab(countOfAnimal), 
             basicRotationAnimal);
         countOfAnimal++;
     }
     
     //Створення рандоної позиції об'єкта
-    public void SetAnimalPos(ref Animals animal,ref SpawnManager spawnManager)
+    public void SetAnimalPos(ref BaseAnimal baseAnimal,ref AnimalSpawnManager animalSpawnManager)
     {
         if (countPosAnimal >= 3)
         {
@@ -49,18 +49,18 @@ public class SpawnPosAnimal : MonoBehaviour
         switch (countPosAnimal)
         {
             case 0:
-                animal.gameObject.transform.position = SpawnPosTop;
-                animal.gameObject.transform.rotation = basicRotationAnimal;
+                baseAnimal.gameObject.transform.position = SpawnPosTop;
+                baseAnimal.gameObject.transform.rotation = basicRotationAnimal;
                 countPosAnimal++;
                 break;
             case 1:
-                animal.gameObject.transform.position = SpawnPosRight;
-                animal.gameObject.transform.rotation = RotationRightSide;
+                baseAnimal.gameObject.transform.position = SpawnPosRight;
+                baseAnimal.gameObject.transform.rotation = RotationRightSide;
                 countPosAnimal++;
                 break;
             case 2:
-                animal.gameObject.transform.position = SpawnPosLeft;
-                animal.gameObject.transform.rotation = RotationLeftSide;
+                baseAnimal.gameObject.transform.position = SpawnPosLeft;
+                baseAnimal.gameObject.transform.rotation = RotationLeftSide;
                 countPosAnimal++;
                 break;
         }

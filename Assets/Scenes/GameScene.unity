@@ -1792,7 +1792,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574411169}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -1869,8 +1869,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 95.9, y: -58}
-  m_SizeDelta: {x: 220.0609, y: 64.9282}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &677566172
 MonoBehaviour:
@@ -1905,7 +1905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Score: '
+  m_Text: 'Score: 0'
 --- !u!222 &677566173
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2915,7 +2915,7 @@ MonoBehaviour:
   - {fileID: 38075343130392499, guid: 0305b51ef7f92934582aac572a9fa0f2, type: 3}
   - {fileID: 7439520519954719613, guid: 47b92157ab8d4dd469025b84a8b46a7e, type: 3}
   - {fileID: 463626561808654668, guid: 0289b8e73dc33894b90304a584b8db1b, type: 3}
-  speedAnimalPrefabSpeed: {fileID: -2605073116117650412, guid: c385bc6bf39b66248be3df57c7ed42b6, type: 3}
+  speedBaseAnimalPrefabSpeed: {fileID: -2605073116117650412, guid: c385bc6bf39b66248be3df57c7ed42b6, type: 3}
   _spawnManager: {fileID: 1040153808}
   spawnPosAnimal: {fileID: 299066470}
 --- !u!4 &1040153809
@@ -3676,8 +3676,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 95.5, y: -6.299988}
-  m_SizeDelta: {x: 153.2333, y: 52.9249}
+  m_AnchoredPosition: {x: 270.7749, y: -55.274384}
+  m_SizeDelta: {x: 541.5397, y: 110.5488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1452734310
 MonoBehaviour:
@@ -3688,10 +3688,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1452734308}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca3fcc21edba4064b992f55e5a78925d, type: 3}
+  m_Script: {fileID: 11500000, guid: 012115f158fe1114cb9fd28b0d012952, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
+  scoreText: {fileID: 677566172}
 --- !u!1 &1526909548
 GameObject:
   m_ObjectHideFlags: 0

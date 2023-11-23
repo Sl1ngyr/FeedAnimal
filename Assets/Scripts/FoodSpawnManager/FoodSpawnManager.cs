@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Pool;
  
-public class FoodSpawner : MonoBehaviour
+public class FoodSpawnManager : MonoBehaviour
 {
     public ObjectPool<Food> _foodPool;
 

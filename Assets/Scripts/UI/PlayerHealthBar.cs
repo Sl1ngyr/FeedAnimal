@@ -2,7 +2,7 @@ using UnityEngine.UI;
 using UnityEngine;
 using UI;
 
-public class HealthBarPlayer : HealthBar
+public class PlayerHealthBar : HealthBar
 {
     [SerializeField] private Text text;
     public override void SetMaxHealth(int maxHealth)

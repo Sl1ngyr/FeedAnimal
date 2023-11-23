@@ -1,20 +1,13 @@
 using SpawnManagerAnimal;
 using UnityEngine;
 
-public class SpawnManager : MonoBehaviour
+public class AnimalSpawnManager : MonoBehaviour
 {
     [SerializeField] private Animal[] animalPrefabs;
-
-    public Animal[] AnimalPrefabs
-    {
-        get => animalPrefabs;
-        set => animalPrefabs = value;
-    }
-
-    [SerializeField] private Animals speedAnimalPrefabSpeed;
-    [SerializeField] private SpawnManager _spawnManager;
+    [SerializeField] private BaseAnimal speedBaseAnimalPrefabSpeed;
+    [SerializeField] private AnimalSpawnManager animalSpawnManager;
     [SerializeField] private SpawnPosAnimal spawnPosAnimal;
-    private ObjectPoolAnimal objectPoolAnimal;
+    private AnimalObjectPool _animalObjectPool;
     
     // Interval to spawn Animal
     private float startDelay = 1.5f;
@@ -27,23 +20,23 @@ public class SpawnManager : MonoBehaviour
     
     void Start()
     {
-        objectPoolAnimal = GetComponent<ObjectPoolAnimal>();
+        _animalObjectPool = GetComponent<AnimalObjectPool>();
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
         InvokeRepeating("SpawnFastAnimal", startDelay,spawnIntervalFastAnimal);
     }
 
     void SpawnRandomAnimal()
     {
-        objectPoolAnimal._pool.Get();
-        objectPoolAnimal._pool.Get();
-        objectPoolAnimal._pool.Get();
+        _animalObjectPool._pool.Get();
+        _animalObjectPool._pool.Get();
+        _animalObjectPool._pool.Get();
     }
 
     private void SpawnFastAnimal()
     {
-        spawnPosAnimal.SetAnimalPos(ref speedAnimalPrefabSpeed, ref _spawnManager);
-        Instantiate(speedAnimalPrefabSpeed, speedAnimalPrefabSpeed.transform.position,
-            speedAnimalPrefabSpeed.transform.rotation);
+        spawnPosAnimal.SetAnimalPos(ref speedBaseAnimalPrefabSpeed, ref animalSpawnManager);
+        Instantiate(speedBaseAnimalPrefabSpeed, speedBaseAnimalPrefabSpeed.transform.position,
+            speedBaseAnimalPrefabSpeed.transform.rotation);
     }
 
     public Animal GetAnimalPrefab(int i)

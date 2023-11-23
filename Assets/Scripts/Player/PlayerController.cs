@@ -9,13 +9,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 20.0f;
     private float xRange = 15.0f;   
     
-    private FoodSpawner _foodSpawner;
+    private FoodSpawnManager _foodSpawnManager;
     [SerializeField] private Food foodPrefab;
     
     
     void Start()
     {
-        _foodSpawner = GetComponent<FoodSpawner>();
+        _foodSpawnManager = GetComponent<FoodSpawnManager>();
     }
     
     void Update()
@@ -35,7 +35,7 @@ public class PlayerController : MonoBehaviour
         transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            _foodSpawner._foodPool.Get();
+            _foodSpawnManager._foodPool.Get();
         }
     }
 

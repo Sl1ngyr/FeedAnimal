@@ -2,8 +2,9 @@ using System.Collections;
 using SpawnManagerAnimal;
 using UnityEngine;
 using UnityEngine.Pool;
+using DefaultNamespace;
 
-public class Animal : Animals
+public class Animal : BaseAnimal
 {
     private ObjectPool<Animal> _pool;
     
@@ -18,12 +19,11 @@ public class Animal : Animals
                 case GateType.Food:
                     currentHealth++;
                     healthbar.SetHealth(currentHealth);
-                    animalSound.PlayOneShot(eatSound, 1.0f);
+                    ActionSoundManager.onAnimalSoundPlayed?.Invoke();
                     if (currentHealth == maxHealth)
                     {
                         StartCoroutine("WaitForDeactivateAnimalAfterTime");
                     }
-
                     break;
                 case GateType.Player:
                     _pool.Release(this);
@@ -46,8 +46,11 @@ public class Animal : Animals
         _pool.Release(this);
         currentHealth = 0;
         healthbar.SetHealth(currentHealth);
-        StopCoroutine("WaitForDeactivateAnimalAfterTime");
+        Debug.Log(scorePlayerFeedAnimal.ToString());
         scorePlayerFeedAnimal++;
+        Debug.Log(scorePlayerFeedAnimal.ToString());
+        onScoreTextSet?.Invoke();
+        StopCoroutine("WaitForDeactivateAnimalAfterTime");
     }
 
     public void SetPool(ObjectPool<Animal> pool)

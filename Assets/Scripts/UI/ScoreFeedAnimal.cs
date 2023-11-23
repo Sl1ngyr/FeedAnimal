@@ -1,18 +1,24 @@
-using UI;
-public class ScoreFeedAnimal : ScoreText
+using SpawnManagerAnimal;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ScoreFeedAnimal : MonoBehaviour
 {
-    void Start()
+    [SerializeField] private Text scoreText;
+    
+    private void OnEnable()
     {
-        SetStartText($"Score: {Animal.scorePlayerFeedAnimal.ToString()}");
-        score = Animal.scorePlayerFeedAnimal;
+        BaseAnimal.onScoreTextSet += SetScoreText;
     }
     
-    void Update()
+    private void OnDisable()
     {
-        if (Animal.scorePlayerFeedAnimal > score)
-        {
-            SetScoreText($"Score: {Animal.scorePlayerFeedAnimal.ToString()}");
-            score = Animal.scorePlayerFeedAnimal;
-        }
+        BaseAnimal.onScoreTextSet -= SetScoreText;
     }
+    
+    private void SetScoreText()
+    {
+        scoreText.text = $"Score: {Animal.scorePlayerFeedAnimal.ToString()}";
+    }
+    
 }

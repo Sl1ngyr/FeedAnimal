@@ -1,6 +1,6 @@
 using UI;
 
-public class HealthBarAnimals : HealthBar
+public class AnimalHealthBar : HealthBar
 {
     public override void SetMaxHealth(int maxHealth)
     {

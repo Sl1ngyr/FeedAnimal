@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using SpawnManagerAnimal;
 
 namespace UI
 {
@@ -8,6 +9,7 @@ namespace UI
         public void MainMenuButton()
         {
             Time.timeScale = 1f;
+            BaseAnimal.playerScoreFeedAnimal = 0;
             SceneManager.LoadScene("Start");
         }
     }

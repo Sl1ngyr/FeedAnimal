@@ -11,7 +11,7 @@ public class FoodSpawnManager : MonoBehaviour
     {
         playerController = GetComponent<PlayerController>();
         _foodPool = new ObjectPool<Food>(CreateFood, OnTakeFoodFromPool, OnReturnFoodToPool, OnDestroyFood, true, 30,
-            150);
+            50);
     }
 
     private Food CreateFood()

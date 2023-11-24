@@ -1,3 +1,4 @@
+using System;
 using SpawnManagerAnimal;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class PlayerLifeSystem : MonoBehaviour
     [SerializeField] private PlayerHealthBar healthbar;
 
     private bool isGameOver = false;
-    // Start is called before the first frame update
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -21,7 +22,6 @@ public class PlayerLifeSystem : MonoBehaviour
         playerSound = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (BaseAnimal.isDestroyOutOfBounds)
@@ -37,14 +37,14 @@ public class PlayerLifeSystem : MonoBehaviour
 
         if (isGameOver)
         {
-            gameOverScreen.Setup(BaseAnimal.scorePlayerFeedAnimal);
+            gameOverScreen.Setup(BaseAnimal.playerScoreFeedAnimal);
             isGameOver = false;
         }
     }
     
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collider)
     {
-        if (gameObject.tag == "Player" && other.tag == "Animal")
+        if (gameObject.CompareTag("Player") && collider.CompareTag("Animal"))
         {
             currentHealth--;
             healthbar.SetHealth(currentHealth);

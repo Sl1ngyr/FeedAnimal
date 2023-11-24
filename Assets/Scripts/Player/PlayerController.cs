@@ -4,41 +4,41 @@ using Vector3 = UnityEngine.Vector3;
 
 public class PlayerController : MonoBehaviour
 {
-    private float horizontalInput;
-
-    [SerializeField] private float speed = 20.0f;
+    private Vector3 moveDirection;
+    private Rigidbody playerRidigbody;
+    [SerializeField] private float speed;
     private float xRange = 15.0f;   
     
     private FoodSpawnManager _foodSpawnManager;
     [SerializeField] private Food foodPrefab;
     
     
-    void Start()
+    private void Start()
     {
+        playerRidigbody = GetComponent<Rigidbody>();
         _foodSpawnManager = GetComponent<FoodSpawnManager>();
     }
-    
-    void Update()
+
+    private void FixedUpdate()
     {
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        Move(moveDirection);
+    }
 
-        if (transform.position.x < -xRange)
-        {
-            transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
-        }
-        
-        if (transform.position.x > xRange)
-        {
-            transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
-        }
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _foodSpawnManager._foodPool.Get();
         }
     }
 
+    private void Move(Vector3 direction)
+    {
+        playerRidigbody.MovePosition(transform.position + direction * Time.fixedDeltaTime * speed);
+    }
+    
     public Food GetFoodPrefab()
     {
         return foodPrefab;

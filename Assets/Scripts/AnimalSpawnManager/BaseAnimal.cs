@@ -7,7 +7,7 @@ namespace SpawnManagerAnimal
 {
     public abstract class BaseAnimal : MonoBehaviour
     {
-        public static int scorePlayerFeedAnimal = 0;
+        public static int playerScoreFeedAnimal = 0;
         public static bool isDestroyOutOfBounds = false;
         public static Action onScoreTextSet;
         [SerializeField] protected int currentHealth;
@@ -22,7 +22,7 @@ namespace SpawnManagerAnimal
             healthbar.SetHealth(currentHealth);
             animalSound = GetComponent<AudioSource>();
         }
-        
+
         private void Update()
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
@@ -40,7 +40,7 @@ namespace SpawnManagerAnimal
         
         private void AnimalSoundHit()
         {
-            animalSound.PlayOneShot(eatSound, 0.5f);
+            animalSound.PlayOneShot(eatSound, 0.3f);
         }
         
         protected virtual IEnumerator WaitForDeactivateAnimalAfterTime()
@@ -48,7 +48,7 @@ namespace SpawnManagerAnimal
             yield return new WaitForSeconds(.01f);
             currentHealth = 0;
             healthbar.SetHealth(currentHealth);
-            scorePlayerFeedAnimal++;
+            playerScoreFeedAnimal++;
             onScoreTextSet?.Invoke();
             StopCoroutine("WaitForDeactivateAnimalAfterTime");
             Destroy(gameObject);

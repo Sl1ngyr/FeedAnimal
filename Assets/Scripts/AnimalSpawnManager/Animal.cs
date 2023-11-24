@@ -46,9 +46,7 @@ public class Animal : BaseAnimal
         _pool.Release(this);
         currentHealth = 0;
         healthbar.SetHealth(currentHealth);
-        Debug.Log(scorePlayerFeedAnimal.ToString());
-        scorePlayerFeedAnimal++;
-        Debug.Log(scorePlayerFeedAnimal.ToString());
+        playerScoreFeedAnimal++;
         onScoreTextSet?.Invoke();
         StopCoroutine("WaitForDeactivateAnimalAfterTime");
     }

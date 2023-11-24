@@ -18,7 +18,7 @@ public class ScoreFeedAnimal : MonoBehaviour
     
     private void SetScoreText()
     {
-        scoreText.text = $"Score: {Animal.scorePlayerFeedAnimal.ToString()}";
+        scoreText.text = $"Score: {Animal.playerScoreFeedAnimal.ToString()}";
     }
     
 }

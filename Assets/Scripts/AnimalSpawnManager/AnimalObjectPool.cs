@@ -20,7 +20,8 @@ public class AnimalObjectPool : MonoBehaviour
     private Animal CreateAnimal()
     {
         Animal animal = null;
-        spawnPosAnimal.CreateAnimalSpawn(ref animal, ref _animalSpawnManager);
+        spawnPosAnimal.CreateAnimalSpawn(ref animal,_animalSpawnManager);
+        animal.Init(_animalSpawnManager._audioManager);
         animal.SetPool(_pool);
         return animal;
     }
@@ -29,7 +30,7 @@ public class AnimalObjectPool : MonoBehaviour
     private void OnTakeAnimalFromPool(BaseAnimal baseAnimal)
     {
         //Створення нової позиції об'єкта 
-        spawnPosAnimal.SetAnimalPos(ref baseAnimal,ref _animalSpawnManager);
+        spawnPosAnimal.SetAnimalPos(baseAnimal, _animalSpawnManager);
         
         //Активовуємо об'єкт
         baseAnimal.gameObject.SetActive(true);

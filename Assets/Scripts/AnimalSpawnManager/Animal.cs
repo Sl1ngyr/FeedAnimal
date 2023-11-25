@@ -10,27 +10,27 @@ public class Animal : BaseAnimal
     
     private void OnTriggerEnter(Collider collider)
     {
-        GateDescription nameTriggerCollider = collider.GetComponent<GateDescription>();
+        NameDescription nameTriggerCollider = collider.GetComponent<NameDescription>();
 
         if (nameTriggerCollider != null)
         {
-            switch (nameTriggerCollider.gateType)
+            switch (nameTriggerCollider.nameType)
             {
-                case GateType.Food:
+                case NameType.Food:
                     currentHealth++;
                     healthbar.SetHealth(currentHealth);
-                    ActionSoundManager.onAnimalSoundPlayed?.Invoke();
+                    _audioManager.PlaySFX(SoundType.Eat);
                     if (currentHealth == maxHealth)
                     {
                         StartCoroutine("WaitForDeactivateAnimalAfterTime");
                     }
                     break;
-                case GateType.Player:
+                case NameType.Player:
                     _pool.Release(this);
                     currentHealth = 0;
                     healthbar.SetHealth(currentHealth);
                     break;
-                case GateType.Wall:
+                case NameType.Wall:
                     isDestroyOutOfBounds = true;
                     _pool.Release(this);
                     currentHealth = 0;

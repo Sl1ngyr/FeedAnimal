@@ -1,7 +1,7 @@
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
-
+using DefaultNamespace;
 public class PlayerController : MonoBehaviour
 {
     private Vector3 moveDirection;
@@ -11,8 +11,7 @@ public class PlayerController : MonoBehaviour
     
     private FoodSpawnManager _foodSpawnManager;
     [SerializeField] private Food foodPrefab;
-    
-    
+
     private void Start()
     {
         playerRidigbody = GetComponent<Rigidbody>();

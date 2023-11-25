@@ -10,37 +10,29 @@ namespace SpawnManagerAnimal
         public static int playerScoreFeedAnimal = 0;
         public static bool isDestroyOutOfBounds = false;
         public static Action onScoreTextSet;
+        
+        //Hp bar
+        [SerializeField] protected AnimalHealthBar healthbar;
         [SerializeField] protected int currentHealth;
         [SerializeField] protected int maxHealth;
-        [SerializeField] protected AnimalHealthBar healthbar;
+        //speed animal
         [SerializeField] protected float speed;
-        [SerializeField] protected AudioClip eatSound;
-        protected AudioSource animalSound;
+
+        protected AudioManager _audioManager;
+        
         private void Start()
         {
             healthbar.SetMaxHealth(maxHealth);
             healthbar.SetHealth(currentHealth);
-            animalSound = GetComponent<AudioSource>();
         }
 
         private void Update()
         {
             transform.Translate(Vector3.forward * Time.deltaTime * speed);
         }
-
-        private void OnEnable()
+        public void Init(AudioManager audioManager)
         {
-            ActionSoundManager.onAnimalSoundPlayed += AnimalSoundHit;
-        }
-
-        private void OnDisable()
-        {
-            ActionSoundManager.onAnimalSoundPlayed -= AnimalSoundHit;
-        }
-        
-        private void AnimalSoundHit()
-        {
-            animalSound.PlayOneShot(eatSound, 0.3f);
+            _audioManager = audioManager;
         }
         
         protected virtual IEnumerator WaitForDeactivateAnimalAfterTime()

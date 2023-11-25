@@ -26,7 +26,7 @@ public class SpawnPosAnimal : MonoBehaviour
     public Quaternion RotationLeftSide => rotationLeftSide;
     public Quaternion RotationRightSide => rotationRightSide;
     
-    public void CreateAnimalSpawn(ref Animal animal, ref AnimalSpawnManager animalSpawnManager)
+    public void CreateAnimalSpawn(ref Animal animal,AnimalSpawnManager animalSpawnManager)
     {
         if (countOfAnimal >= animalSpawnManager.GetLengthAnimalPrefabs())
         {
@@ -38,7 +38,7 @@ public class SpawnPosAnimal : MonoBehaviour
     }
     
     //Створення рандоної позиції об'єкта
-    public void SetAnimalPos(ref BaseAnimal baseAnimal,ref AnimalSpawnManager animalSpawnManager)
+    public void SetAnimalPos(BaseAnimal baseAnimal,AnimalSpawnManager animalSpawnManager)
     {
         if (countPosAnimal >= 3)
         {

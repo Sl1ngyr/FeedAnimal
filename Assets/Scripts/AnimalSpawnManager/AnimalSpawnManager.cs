@@ -1,14 +1,14 @@
 using SpawnManagerAnimal;
 using UnityEngine;
-
+using DefaultNamespace;
 public class AnimalSpawnManager : MonoBehaviour
 {
     [SerializeField] private Animal[] animalPrefabs;
     [SerializeField] private BaseAnimal speedBaseAnimalPrefabSpeed;
-    [SerializeField] private AnimalSpawnManager animalSpawnManager;
     [SerializeField] private SpawnPosAnimal spawnPosAnimal;
+    [SerializeField] public AudioManager _audioManager;
     private AnimalObjectPool _animalObjectPool;
-    
+
     // Interval to spawn Animal
     private float startDelay = 1.5f;
     private float spawnInterval = 4;
@@ -34,9 +34,10 @@ public class AnimalSpawnManager : MonoBehaviour
 
     private void SpawnFastAnimal()
     {
-        spawnPosAnimal.SetAnimalPos(ref speedBaseAnimalPrefabSpeed, ref animalSpawnManager);
-        Instantiate(speedBaseAnimalPrefabSpeed, speedBaseAnimalPrefabSpeed.transform.position,
-            speedBaseAnimalPrefabSpeed.transform.rotation);
+        spawnPosAnimal.SetAnimalPos(speedBaseAnimalPrefabSpeed, this);
+        var fastAnimal = Instantiate(speedBaseAnimalPrefabSpeed, speedBaseAnimalPrefabSpeed.transform.position,
+            speedBaseAnimalPrefabSpeed.transform.rotation).GetComponent<FastAnimal>();
+        fastAnimal.Init(_audioManager);
     }
 
     public Animal GetAnimalPrefab(int i)

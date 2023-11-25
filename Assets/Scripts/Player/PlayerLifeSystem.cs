@@ -1,25 +1,25 @@
 using System;
 using SpawnManagerAnimal;
 using UnityEngine;
+using DefaultNamespace;
+using UnityEngine.Serialization;
 
 public class PlayerLifeSystem : MonoBehaviour
 {
+    //Hp bar
     private int maxHealth = 3;
     private int currentHealth;
-
-    private AudioSource playerSound;
+    [SerializeField] private PlayerHealthBar healthbar;
+    //Sound
+    [SerializeField] private AudioManager audio;
 
     [SerializeField] private GameOverScreen gameOverScreen;
-    [SerializeField] private AudioClip hitSound;
-    [SerializeField] private PlayerHealthBar healthbar;
-
     private bool isGameOver = false;
 
     void Start()
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(maxHealth);
-        playerSound = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -29,6 +29,7 @@ public class PlayerLifeSystem : MonoBehaviour
             --currentHealth;
             healthbar.SetHealth(currentHealth);
             BaseAnimal.isDestroyOutOfBounds = false;
+            audio.PlaySFX(SoundType.Hit);
             if (currentHealth == 0)
             {
                 isGameOver = true;
@@ -41,14 +42,13 @@ public class PlayerLifeSystem : MonoBehaviour
             isGameOver = false;
         }
     }
-    
     private void OnTriggerEnter(Collider collider)
     {
         if (gameObject.CompareTag("Player") && collider.CompareTag("Animal"))
         {
             currentHealth--;
             healthbar.SetHealth(currentHealth);
-            playerSound.PlayOneShot(hitSound, 1.0f);
+            audio.PlaySFX(SoundType.Hit);
             if (currentHealth == 0)
             {
                 isGameOver = true;

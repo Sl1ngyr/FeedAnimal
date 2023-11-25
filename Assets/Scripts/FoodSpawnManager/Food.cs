@@ -16,13 +16,13 @@ public class Food : MonoBehaviour
     
     private void OnTriggerEnter(Collider collider)
     {
-        GateDescription nameTriggerCollider = collider.GetComponent<GateDescription>();
+        NameDescription nameTriggerCollider = collider.GetComponent<NameDescription>();
 
         if (nameTriggerCollider != null)
         {
-            switch (nameTriggerCollider.gateType)
+            switch (nameTriggerCollider.nameType)
             {
-                case GateType.Animal:
+                case NameType.Animal:
                     _pool.Release(this);
                     break;
             }

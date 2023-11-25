@@ -7,6 +7,7 @@ public class GameOverScreen : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI highScoreText;
+    private const string HIGH_SCORE_PREFS_KEY = "HighScore";
     
     public void Setup(int score)
     {
@@ -26,10 +27,11 @@ public class GameOverScreen : MonoBehaviour
 
     private void SetHighScore()
     {
-        if (BaseAnimal.playerScoreFeedAnimal > PlayerPrefs.GetInt("HighScore"))
+        if (BaseAnimal.playerScoreFeedAnimal > PlayerPrefs.GetInt(HIGH_SCORE_PREFS_KEY))
         {
-            PlayerPrefs.SetInt("HighScore", BaseAnimal.playerScoreFeedAnimal);
-            highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();
-        }else highScoreText.text = "HighScore: " + PlayerPrefs.GetInt("HighScore").ToString();
+            PlayerPrefs.SetInt(HIGH_SCORE_PREFS_KEY, BaseAnimal.playerScoreFeedAnimal);
+            highScoreText.text = $"{HIGH_SCORE_PREFS_KEY}: " + PlayerPrefs.GetInt(HIGH_SCORE_PREFS_KEY);
+        }
+        else highScoreText.text = $"{HIGH_SCORE_PREFS_KEY}: " + PlayerPrefs.GetInt(HIGH_SCORE_PREFS_KEY);
     }
 }

@@ -1,7 +1,7 @@
 using UnityEngine;
 using Quaternion = UnityEngine.Quaternion;
 using Vector3 = UnityEngine.Vector3;
-using DefaultNamespace;
+
 public class PlayerController : MonoBehaviour
 {
     private Vector3 moveDirection;
@@ -20,13 +20,14 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
+        
         Move(moveDirection);
     }
 
 
     private void Update()
     {
+        moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, 0f);
         if (Input.GetKeyDown(KeyCode.Space))
         {
             _foodSpawnManager._foodPool.Get();
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move(Vector3 direction)
     {
-        playerRidigbody.MovePosition(transform.position + direction * Time.fixedDeltaTime * speed);
+        playerRidigbody.MovePosition(playerRidigbody.position + direction * Time.fixedDeltaTime * speed);
     }
     
     public Food GetFoodPrefab()

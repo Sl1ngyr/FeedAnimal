@@ -8,6 +8,7 @@ namespace UI
     {
         public void MainMenuButton()
         {
+            AudioListener.pause = false;
             Time.timeScale = 1f;
             BaseAnimal.playerScoreFeedAnimal = 0;
             SceneManager.LoadScene("Start");

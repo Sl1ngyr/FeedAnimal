@@ -19,30 +19,14 @@ namespace DefaultNamespace
         public void PlayMusic(SoundType soundType)
         {
             Sound sound = Array.Find(musicSounds, x => x.soundName == soundType);
-
-            if (sound == null)
-            {
-                Debug.LogError("Sound not found");
-            }
-            else
-            {
-                musicSource.clip = sound.clip;
-                musicSource.Play();
-            }
+            musicSource.clip = sound.clip;
+            musicSource.Play();
         }
         
         public void PlaySFX(SoundType soundType)
         {
             Sound sound = Array.Find(sfxSounds, x => x.soundName == soundType);
-            
-            if (sound == null)
-            {
-                Debug.LogError("Sound not found");
-            }
-            else
-            {
-                sfxSource.PlayOneShot(sound.clip);
-            }
+            sfxSource.PlayOneShot(sound.clip);
         }
 
         public void SetVolume(AudioSource audio, float volume)

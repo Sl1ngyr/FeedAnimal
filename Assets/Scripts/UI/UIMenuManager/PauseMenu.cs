@@ -4,10 +4,11 @@ public class PauseMenu : MonoBehaviour
 {
     public static bool isGamePaused = false;
     [SerializeField] private GameObject pauseMenuUI;
+    [SerializeField] private GameObject settingsMenu;
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && settingsMenu.activeSelf == false)
         {
             if (isGamePaused)
             {
@@ -20,6 +21,7 @@ public class PauseMenu : MonoBehaviour
     public void ResumeGame()
     {
         pauseMenuUI.SetActive(false);
+        AudioListener.pause = false;
         Time.timeScale = 1;
         isGamePaused = false;
     }
@@ -27,6 +29,7 @@ public class PauseMenu : MonoBehaviour
     public void PauseGame()
     {
         pauseMenuUI.SetActive(true);
+        AudioListener.pause = true;
         Time.timeScale = 0;
         isGamePaused = true;
     }

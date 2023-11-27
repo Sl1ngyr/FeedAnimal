@@ -22,7 +22,7 @@ public class AnimalSpawnManager : MonoBehaviour
     {
         _animalObjectPool = GetComponent<AnimalObjectPool>();
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
-        InvokeRepeating("SpawnFastAnimal", startDelay,spawnIntervalFastAnimal);
+        InvokeRepeating("SpawnFastAnimal", startDelayFastAnimal,spawnIntervalFastAnimal);
     }
 
     void SpawnRandomAnimal()

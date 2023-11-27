@@ -1296,8 +1296,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1220714135}
   - {fileID: 1499674995}
+  - {fileID: 1220714135}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &410089276
@@ -1551,6 +1551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39135c0700fb7134d8dae5af5bdca22d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 840989}
   globalSlider: {fileID: 1387194726}
   musicSlider: {fileID: 1059750281}
   sfxSlider: {fileID: 677147925}
@@ -4004,7 +4005,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37888da071d673e40919c30de93cf956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   foodPrefab: {fileID: 3146663733134337351, guid: e7ba87998a9b8f74ca5da03fea28201d, type: 3}
 --- !u!54 &876538182
 Rigidbody:
@@ -5424,6 +5425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 840989}
+  settingsMenu: {fileID: 462084328}
 --- !u!1 &1145708812
 GameObject:
   m_ObjectHideFlags: 0
@@ -5630,8 +5632,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.42195, z: 1}
+  m_Center: {x: 0, y: 0.7109718, z: 0}
 --- !u!4 &1220714135
 Transform:
   m_ObjectHideFlags: 0
@@ -6212,8 +6214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 2.4219503, z: 1}
+  m_Center: {x: 0, y: 0.7109718, z: 0}
 --- !u!1 &1501628718
 GameObject:
   m_ObjectHideFlags: 0

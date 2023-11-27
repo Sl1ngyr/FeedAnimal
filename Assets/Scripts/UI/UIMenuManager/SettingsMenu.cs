@@ -5,6 +5,7 @@ using DefaultNamespace;
 
 public class SettingsMenu : MonoBehaviour
 {
+    [SerializeField] private GameObject pauseMenu;
     [SerializeField] private Slider globalSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider sfxSlider;
@@ -22,6 +23,16 @@ public class SettingsMenu : MonoBehaviour
         globalSlider.onValueChanged.AddListener(OnGlobalValueChanged);
         musicSlider.onValueChanged.AddListener(OnMusicValueChanged);
         sfxSlider.onValueChanged.AddListener(OnSFXValueChanged);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) && pauseMenu.activeSelf == false)
+        {
+            SaveAudioData();
+            gameObject.SetActive(false);
+            pauseMenu.SetActive(true);
+        }
     }
 
     private void OnDestroy()
@@ -52,5 +63,4 @@ public class SettingsMenu : MonoBehaviour
     {
         audioManager.SetVolume(sfxSource, value);
     }
-    
 }
